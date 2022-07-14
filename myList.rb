@@ -1,4 +1,4 @@
-require './myEnumerable.rb'
+require './myEnumerable'
 
 class MyList
   include Enumerable
@@ -7,7 +7,7 @@ class MyList
     @list = list
   end
 
-  def my_each
+  def each
     return to_enum unless block_given?
 
     m = @list.to_a
@@ -21,13 +21,13 @@ end
 list = MyList.new(1, 2, 3, 4)
 
 # Test #all?
-puts list.my_all? { |e| e < 5 } # true
-puts list.my_all? { |e| e > 5 } # false
-puts list.my_all? #true
+puts list.all? { |e| e < 5 } # true
+puts list.all? { |e| e > 5 } # false
+puts list.all? # true
 
 # Test #any?
-puts list.my_any? { |e| e == 2 } # true
-puts list.my_any? { |e| e == 5 } # false
+puts list.any? { |e| e === 2 } # true
+puts list.any? { |e| e === 5 } # false
 
 # Test #filter
-p list.my_filter { |e| e&.even? } # 2, 4
+p list.filter { |e| e&.even? } # 2, 4
