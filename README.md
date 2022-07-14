@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Decode Morse Code
+# Enumerable
 
-A Ruby program to decrypting messages written in Morse code.
+In this project we will use module inside a class. For this we will create a class MyList and a module MyEnumerable. Our module MyEnumerable will implement a subset of the functionality of Enumerable.
 
 ## Built With
 
@@ -17,7 +17,8 @@ To get a local copy up and running follow these simple example steps.
 You must have Ruby installed in your computer.
 
 ### Clone this repo
-`git clone git@github.com:marilirulita/decode_morse_code.git`
+
+`https://github.com/Tadesse-Alemayehu/ruby-Enumerable`
 
 ### In your terminal:
 
@@ -50,6 +51,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Hat tip to all our code reviewers and partners at Microverse.
+
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
