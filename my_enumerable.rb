@@ -4,7 +4,7 @@ module Enumerable
     b = true
     each do |a|
       if !par[0].nil?
-        b = false unless par[0] === a
+        b = false unless par[0] == a
       elsif block_given?
         b = false unless yield a
       else
@@ -21,7 +21,7 @@ module Enumerable
       if block_given?
         b = true if yield a
       elsif !par[0].nil?
-        b = true if par[0] === a
+        b = true if par[0] == a
       elsif a
         b = true
       end
