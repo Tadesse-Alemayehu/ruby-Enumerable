@@ -1,4 +1,6 @@
 class MyList
+  include Enumerable
+  
   @list=[]
   def initialize(*input)
     @list=input
