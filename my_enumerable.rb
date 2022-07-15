@@ -1,39 +1,18 @@
 module Enumerable
-  # my_all? (continue as above)
-  def all?(*par)
-    b = true
-    each do |a|
-      if !par[0].nil?
-        b = false unless par[0] == a
-      elsif block_given?
-        b = false unless yield a
-      else
-        b = false unless a
-      end
-    end
-    b
+  def all?
+    return true unless block_given?
+    each {|n| return false unless yield(n)}
+    true
   end
-
-  # my_any?
-  def any?(*par)
-    b = false
-    each do |a|
-      if block_given?
-        b = true if yield a
-      elsif !par[0].nil?
-        b = true if par[0] == a
-      elsif a
-        b = true
-      end
-    end
-    b
+  def any?
+    return true unless block_given?
+    each {|n| return true if yield(n)}
+    false
   end
-
   def filter
-    return to_enum(:filter) unless block_given?
-
-    a = []
-    each { |elm| a << elm if yield(elm) }
-    a
+    result=[];
+    return result unless block_given?
+    each {|n| result.push(n) if yield(n)}
+    result
   end
 end
