@@ -2,13 +2,17 @@ module Enumerable
   def all?
     return false unless block_given?
     each {|n| return false unless yield(n)}
-    puts 'this is all'
     true
   end
-  def any(&block)
-    puts 'this is any'
+  def any?
+    return false unless block_given?
+    each {|n| return true if yield(n)}
+    false
   end
-  def filter(&block)
-    puts 'this is filter'
+  def filter
+    result=[];
+    return result unless block_given?
+    each {|n| result.push(n) if yield(n)}
+    result
   end
 end
